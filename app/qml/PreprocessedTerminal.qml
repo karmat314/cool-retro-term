@@ -226,7 +226,7 @@ Item{
             } else {
                 var coord = correctDistortion(wheel.x, wheel.y);
                 var isMouseWheel = wheel.phase === Qt.NoScrollPhase;
-                var stepValue = kterminal.terminalUsesMouse || (kterminal.scrollbarMaximum > 0 && isMouseWheel) ? 120 : 40;
+                var stepValue = kterminal.terminalUsesMouse || isMouseWheel ? 120 : 40;
                 if (wheel.angleDelta.y * wheelRemainder < 0)
                     wheelRemainder = 0;
                 wheelRemainder += wheel.angleDelta.y * appSettings.scrollSpeed;
